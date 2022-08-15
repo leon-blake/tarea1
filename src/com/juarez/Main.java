@@ -11,6 +11,8 @@ public class Main {
         ManagerArchivos manager = new ManagerArchivos();
         
         manager.leerArchivo();
+        manager.leerArchivo();
+        
         
         
     }
