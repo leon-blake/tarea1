@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class ManagerArchivos {
 
     public void leerArchivo() {
-        String ruta= "C:/archivo.txt";
+        String ruta = "C:/Excepciones.txt";
         File archivo = new File(ruta);
         try {
 
@@ -21,31 +21,35 @@ public class ManagerArchivos {
             while (obj.hasNextLine()) {
                 System.out.println(obj.nextLine());
             }
-        } catch (FileNotFoundException ex) {
+        } catch (Exception ex) {
             System.out.println("el archivo que buscas no esta disponible");
+            System.out.println(ex);
+
             if (!archivo.exists()) {
                 try {
-                    
-                    String contenido ="esto es un texto de muestra el archivo que solicitaste no  estaba disponible"
-                            + "en estos  momentos";
+
+                    String contenido = "mensaje de muestra\n"
+                            + "mensaje de muestra\n"
+                            + "mensaje de muestra\n"
+                            + "mensaje de muestra\n"
+                            + "mensaje de muestra\n"
+                            + "mensaje de muestra\n";
                     archivo.createNewFile();
-                    
-                    FileWriter write  = new FileWriter(archivo);
+
+                    FileWriter write = new FileWriter(archivo);
                     BufferedWriter lapis = new BufferedWriter(write);
                     lapis.write(contenido);
-                    
+
                     lapis.close();
                 } catch (IOException ex1) {
                     Logger.getLogger(ManagerArchivos.class.getName()).log(Level.SEVERE, null, ex1);
                 }
-                
-                
+
             }
-            
-            
+
         } finally {
 
-            System.out.println("");
+            System.out.println("-------opeacion finalizada--------------------");
         }
 
     }

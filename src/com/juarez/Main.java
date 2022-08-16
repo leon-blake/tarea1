@@ -9,8 +9,15 @@ public class Main {
         
         
         ManagerArchivos manager = new ManagerArchivos();
-        
+        try {
+            
+            
         manager.leerArchivo();
+            
+        } catch (Exception e) {
+            
+            System.out.println("ATENCION  ERROR DE ACCESO  PORFAVOR  EJECUTAR PROGRAMA COMO  ADMINISTRADOR");
+        }
         
         
         
